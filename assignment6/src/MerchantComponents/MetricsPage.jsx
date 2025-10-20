@@ -1,3 +1,6 @@
+//renders the components for the metrics page
+//coming soon
+
 import { Card } from "flowbite-react";
 
 function Metrics() {

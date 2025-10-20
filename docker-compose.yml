@@ -1,3 +1,5 @@
+#this file is used to build the docker container and download postgresql to it. it also sets the setting such as db name, db user, and the password among others.
+
 services:
   db:
     image: postgres:16

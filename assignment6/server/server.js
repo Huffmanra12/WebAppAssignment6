@@ -1,14 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-const app = express();
-const port = 8080;
-const knex = require("knex")(require("../database/knexfile.js")["development"]);
+//This file holds all of the API endpoints
+const express = require("express"); //import express framework
+const cors = require("cors"); //imports CORS middleware
+const app = express(); //creates an express application instance
+const port = 8080; //defines the port the server will listen on
+const knex = require("knex")(require("../database/knexfile.js")["development"]); //initializes knex using development configs
 
-app.use(express.json());
-app.use(cors());
+app.use(express.json()); //enables jason parsing
+app.use(cors()); //enable CORS for all rotes (allows the frontend to communicate with the backend)
 
-//All Get Requests
-//-------------------------------------------------
+//-------------------All Get Requests------------------------------
+//Thes are the endpoints that retrieve and return data to the front end
 app.get("/", (req, res) => {
   res.status(200).send("Server Is Running!");
 });
@@ -64,6 +65,7 @@ app.get("/users/:id", async (req, res) => {
 });
 
 //----------------POST Requests---------------
+//These are the endpoints that take data sent from the front end and place it into the database.
 app.post("/addItems", async (req, res) => {
   const { item_name, item_desc, item_price, id } = req.body;
 

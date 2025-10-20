@@ -1,10 +1,11 @@
+//Component that renders teh side bar of the application for user navigation
 import {
   Sidebar,
   SidebarItem,
   SidebarItemGroup,
   SidebarItems,
 } from "flowbite-react";
-
+//the setCurrentPage() function changes currentPage telling the application what to render.
 function MerchantSidebar({ currentPage, setCurrentPage }) {
   return (
     <Sidebar aria-label="Default sidebar example">
@@ -31,5 +32,5 @@ function MerchantSidebar({ currentPage, setCurrentPage }) {
     </Sidebar>
   );
 }
-
+//exports the sidebar to be used in the appliation.
 export default MerchantSidebar;

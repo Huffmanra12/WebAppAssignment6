@@ -1,3 +1,4 @@
+//component that renders the add item form and submits it to the backend.
 import {
   Card,
   Button,
@@ -14,10 +15,11 @@ function AddItem({ user, updateItems }) {
   const [price, setItemPrice] = useState("");
   const userID = user[0].id;
 
+//when submit is clicked on the form this runs peforming a POST and submitting the data to the backend to be added to the database
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://192.168.1.239:8080/addItems", {
+    await fetch("http://localhost:8080/addItems", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -36,7 +38,6 @@ function AddItem({ user, updateItems }) {
       })
     );
   };
-
   return (
     <>
       <div className="flex items-center justify-center min-h-screen ">
@@ -52,7 +53,7 @@ function AddItem({ user, updateItems }) {
                 type="text"
                 placeholder="Type Item Name"
                 value={itemName}
-                onChange={(e) => setItemName(e.target.value)}
+                onChange={(e) => setItemName(e.target.value)} //all on changes will update the value of the defined variable at the top to be loaded into the fetch that performs the post
                 required
               />
             </div>
@@ -93,5 +94,5 @@ function AddItem({ user, updateItems }) {
     </>
   );
 }
-
+//esports AddItem to be used in the application
 export default AddItem;

@@ -1,9 +1,13 @@
+//This file creates the all items component
+
 import { Card, Button } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 
+//The function AllItems receives a prop from the parent component called items
 function AllItems({ items = [] }) {
   const navigate = useNavigate();
 
+  //If statment checks to ensure that items contains data by ensuring it has a lenght thats not less than 1.
   if (items.length < 1) {
     return (
       <Card>
@@ -12,6 +16,7 @@ function AllItems({ items = [] }) {
     );
   }
 
+  //If the length is 1 or greater then the array is parsed and a card is built for each object in the array.
   return (
     <div
       className={`flex flex-wrap justify-center${
@@ -38,4 +43,5 @@ function AllItems({ items = [] }) {
     </div>
   );
 }
+//exports the function to be inported elsewhere in the application.
 export default AllItems;

@@ -1,6 +1,8 @@
 /**
  * @param { import('knex').Knex } knex
  * @returns { Promise<void> }
+ * 
+ * This file provides initial seed data for the database once the tables are built it provides data that can be fetched and manipulated for testing the application
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries

@@ -1,3 +1,6 @@
+//This file defines the database connections settings and paths. Its used by Knex to connect to the PostgreSQL database
+//as you can see the password is not hardcoded in but insted dotenv pulls the data from the .env file
+
 require("dotenv").config();
 
 const { DB_HOST, PGHOST, PGPORT, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
